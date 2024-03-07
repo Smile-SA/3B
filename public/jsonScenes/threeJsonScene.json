@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "version": 4.6,
+    "type": "Object",
+    "generator": "Object3D.toJSON"
+  },
+  "geometries": [
+    {
+      "uuid": "a8467858-a554-4f2c-bba4-546983e03f04",
+      "type": "BoxGeometry",
+      "width": 4,
+      "height": 4,
+      "depth": 4,
+      "widthSegments": 1,
+      "heightSegments": 1,
+      "depthSegments": 1
+    }
+  ],
+  "materials": [
+    {
+      "uuid": "be730ab2-ff77-4b49-b20d-ee02783acd77",
+      "type": "MeshPhongMaterial",
+      "color": 16777215,
+      "emissive": 0,
+      "specular": 1118481,
+      "shininess": 30,
+      "reflectivity": 1,
+      "refractionRatio": 0.98,
+      "blendColor": 0
+    }
+  ],
+  "object": {
+    "uuid": "2974c456-8661-4cc0-bf08-e289ce234dae",
+    "type": "Scene",
+    "layers": 1,
+    "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+    "up": [0, 1, 0],
+    "children": [
+      {
+        "uuid": "55275c8d-7e6c-4f1c-a5cc-bcdc7b10ec30",
+        "type": "PerspectiveCamera",
+        "layers": 1,
+        "matrix": [
+          1, 0, 0, 0, 0, 1, -6.123233995736766e-17, 0, 0, 6.123233995736766e-17,
+          1, 0, 0, 6.123233995736766e-16, 10, 1
+        ],
+        "up": [0, 1, 0],
+        "fov": 75,
+        "zoom": 1,
+        "near": 0.1,
+        "far": 1000,
+        "focus": 10,
+        "aspect": 1.0579710144927537,
+        "filmGauge": 35,
+        "filmOffset": 0
+      },
+      {
+        "uuid": "a5d7589e-ae08-4ba8-b9da-702a49536826",
+        "type": "HemisphereLight",
+        "layers": 1,
+        "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1],
+        "up": [0, 1, 0],
+        "color": 16777215,
+        "intensity": 1,
+        "groundColor": 8421504
+      },
+      {
+        "uuid": "107a9a7d-f6cf-46f1-a06a-92dc901fc7e5",
+        "type": "Mesh",
+        "layers": 1,
+        "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+        "up": [0, 1, 0],
+        "geometry": "a8467858-a554-4f2c-bba4-546983e03f04",
+        "material": "be730ab2-ff77-4b49-b20d-ee02783acd77"
+      }
+    ]
+  }
+}

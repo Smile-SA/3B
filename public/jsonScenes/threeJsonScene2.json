@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "version": 4.5,
+    "type": "Object",
+    "generator": "Object3D.toJSON"
+  },
+  "geometries": [
+    {
+      "uuid": "3B63FFE6-FE65-417D-8C80-94BDCB7D8425",
+      "type": "PlaneGeometry",
+      "width": 30,
+      "height": 15,
+      "widthSegments": 30,
+      "heightSegments": 15
+    }
+  ],
+  "materials": [
+    {
+      "uuid": "BEECB3C7-322F-477B-93D2-FDB68456318F",
+      "type": "MeshBasicMaterial",
+      "color": 16711680,
+      "reflectivity": 1,
+      "refractionRatio": 0.98,
+      "side": 2,
+      "depthFunc": 3,
+      "depthTest": true,
+      "depthWrite": true,
+      "colorWrite": true,
+      "stencilWrite": false,
+      "stencilWriteMask": 255,
+      "stencilFunc": 519,
+      "stencilRef": 0,
+      "stencilFuncMask": 255,
+      "stencilFail": 7680,
+      "stencilZFail": 7680,
+      "stencilZPass": 7680,
+      "wireframe": true
+    }
+  ],
+  "object": {
+    "uuid": "BE4F5706-EDDF-4A8B-8EB0-8BEA46F186C2",
+    "type": "Scene",
+    "layers": 1,
+    "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+    "children": [
+      {
+        "uuid": "D4612F3B-585C-4CD6-A2E3-B71C5B850964",
+        "type": "PerspectiveCamera",
+        "layers": 1,
+        "matrix": [
+          1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 3.061616997868383e-15, 50, 1
+        ],
+        "fov": 50,
+        "zoom": 1,
+        "near": 1,
+        "far": 1000,
+        "focus": 10,
+        "aspect": 0.6708004509582863,
+        "filmGauge": 35,
+        "filmOffset": 0
+      },
+      {
+        "uuid": "0A657EBC-1417-41B9-AE2D-33D2719385D2",
+        "type": "Mesh",
+        "layers": 1,
+        "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+        "geometry": "3B63FFE6-FE65-417D-8C80-94BDCB7D8425",
+        "material": "BEECB3C7-322F-477B-93D2-FDB68456318F"
+      }
+    ]
+  }
+}

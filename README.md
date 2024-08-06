@@ -17,13 +17,13 @@ You need to have Node.js and npm installed on your machine.
 2. Install the dependencies
 
  ```bash 
- npm install
+ yarn install
  ``` 
 
  3. Start the project
  
  ```bash 
- npm run start
+ yarn run start
  ```
 
 ## Usage

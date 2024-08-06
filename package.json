@@ -15,6 +15,7 @@
     "react-scripts": "5.0.1",
     "three": "^0.162.0",
     "three-gltf-exporter": "^0.0.1",
+    "typescript": "^5.5.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,7 +44,8 @@
   },
   "browser": {
     "fs": false,
-    "path": false,
-    "os": false
-  }
+    "os": false,
+    "path": false
+  },
+  "packageManager": "yarn@4.4.0"
 }

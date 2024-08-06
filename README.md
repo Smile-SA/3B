@@ -2,6 +2,8 @@
 
 This project is a converter that takes a scene as a JSON file and converts it between Three.js and Babylon.js, or vice versa.
 
+***Disclaimer***: this is an experimental project containing a limited functional coverage and / or bugs.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.

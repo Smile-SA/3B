@@ -139,9 +139,9 @@ export class BabylonToThreeConvertor {
      */
     getHtmlCanvas(canvasRef: any): JSX.Element {
         return (
-            <div className="c-BabylonToThreeConvertor" >
-                <div className="c-BabylonToThreeConvertor__Title"><h3>Three.js scene converted from Babylon.js</h3></div>
-                <div ><canvas title='' ref={canvasRef} /></div>
+            <div className="BabylonToThreeConvertor" >
+                <div className="BabylonToThreeConvertor__Title"><h3>Three.js</h3></div>
+                <canvas title='' ref={canvasRef} />
             </div>
         );
     }

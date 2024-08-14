@@ -32,8 +32,8 @@ const LoadedBabylonJsonScene = ({ jsonScene }) => {
   }, []);
 
   return (
-    <div className="c-LoadedBabylonJsonScene">
-      <div className="c-LoadedThreeJsonScene__Title">
+    <div className="LoadedBabylonJsonScene">
+      <div className="LoadedThreeJsonScene__Title">
         <h3>Babylon Scene</h3>
       </div>
       <canvas title="" ref={canvasRef} />

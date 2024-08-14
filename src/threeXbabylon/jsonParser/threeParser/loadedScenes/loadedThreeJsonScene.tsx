@@ -9,7 +9,6 @@ const LoadedThreeJsonScene = ({jsonScene}) => {
 
   useEffect(() => {
 
-
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer, box: THREE.Mesh;
 
     renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current ?? undefined });
@@ -53,8 +52,8 @@ const LoadedThreeJsonScene = ({jsonScene}) => {
  });
 
   return(
-        <div className='c-LoadedThreeJsonScene'>
-            <div className='c-LoadedThreeJsonScene__Title'><h3>Three Scene</h3></div>
+        <div className='LoadedThreeJsonScene'>
+            <div className='LoadedThreeJsonScene__Title'><h3>Three.js Scene</h3></div>
             <canvas title='' ref={canvasRef} />
         </div>
   ) 

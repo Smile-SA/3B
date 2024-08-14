@@ -11,30 +11,30 @@ function App() {
 
   /*Static Data */
   const titlePage = "ThreeXBabylon - Playground"
-  const subtitlePage = "Developed by SMILE R&D"
+  const subtitlePage = "Developed by SMILE R&D 🇫🇷"
   const transformToBabylonText = "Transform to Babylon()"
   const transformToThreejsText = "Transform to Threejs()"
 
   return (
     <div className="App">
-      <div>
+      <div className="App__TitlesBlock" >
       <h1>{titlePage}</h1>
-      <h4>{subtitlePage}</h4>
+      <p>{subtitlePage}</p>
       </div>
-      <div className="App_InitialResult">
+      <div className="App__InitialResult">
         <LoadedThreeJsonScene jsonScene={threeJsonScene} />
-        <div className="arrow-block">
-          <div className="arrow-text">{transformToBabylonText}</div>
-          <div className="arrow-triangle"></div>
+        <div className="App__Arrow-block">
+          <div className="App__Arrow-text">{transformToBabylonText}</div>
+          <div className="App__Arrow-triangle"></div>
         </div>
         <LoadedBabylonJsonScene jsonScene={babylonJsonScene} />
       </div>
 
-      <div className="App_ConvertedResult">
+      <div className="App__ConvertedResult">
         <BabylonSceneFromThree jsonScene={threeJsonScene} />
-        <div className="arrow-block">
-          <div className="arrow-text">{transformToThreejsText}</div>
-          <div className="arrow-triangle"></div>
+        <div className="App__Arrow-block">
+          <div className="App__Arrow-text">{transformToThreejsText}</div>
+          <div className="App__Arrow-triangle"></div>
         </div>
         <ThreeSceneFromBabylon jsonScene={babylonJsonScene} />
       </div>

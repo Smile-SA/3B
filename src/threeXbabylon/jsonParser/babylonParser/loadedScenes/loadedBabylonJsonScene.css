@@ -1,18 +1,18 @@
-.c-LoadedBabylonJsonScene {
+.LoadedBabylonJsonScene {
   position: relative;
   width: "40%";
-  background-color: #afdbf5;
+  background-color: #cbe6f4;
   border-radius: 30px;
   padding: 20px;
   margin-top: 20px;
 }
 
-.c-LoadedBabylonJsonScene__Title {
+.LoadedBabylonJsonScene__Title {
   position: absolute;
   top: 5%;
   background-color: white;
   border-radius: 5px;
-  transform: translate(-20%, -20%) rotate(-35deg); /* Center it and then rotate */
+  transform: translate(-20%, -20%) rotate(-35deg);
   padding: 0 20px;
   border-color: black;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);

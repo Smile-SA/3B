@@ -75,9 +75,9 @@ export class ThreeToBabylonConvertor {
    */
   getHtmlCanvas(canvasRef: any): JSX.Element {
     return (
-      <div className="c-ThreeToBabylonConvertor">
-        <div className="c-ThreeToBabylonConvertor__Title">
-          <h3>Babylon.js converted from Three.js</h3>
+      <div className="ThreeToBabylonConvertor">
+        <div className="ThreeToBabylonConvertor__Title">
+          <h3>Babylon</h3>
         </div>
         <canvas title="" ref={canvasRef} />
       </div>

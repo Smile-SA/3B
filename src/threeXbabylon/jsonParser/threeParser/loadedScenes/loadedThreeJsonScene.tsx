@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { ThreeJsonLoader } from '../loaders/threeJsonLoader';
-
+import "./loadedThreeJsonScene.css"
 
 const LoadedThreeJsonScene = ({jsonScene}) => {
     const canvasRef = useRef(null);
@@ -53,8 +53,8 @@ const LoadedThreeJsonScene = ({jsonScene}) => {
  });
 
   return(
-        <div>
-            <h3>Initial Three Scene</h3>
+        <div className='c-LoadedThreeJsonScene'>
+            <div className='c-LoadedThreeJsonScene__Title'><h3>Three Scene</h3></div>
             <canvas title='' ref={canvasRef} />
         </div>
   ) 

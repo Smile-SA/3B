@@ -5,6 +5,7 @@ import { ConvertToThree } from "../adapter/implementation/convertToThree";
 import { BabylonJsonLoader } from "../jsonParser/babylonParser/loaders/babylonJsonLoader";
 import React from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import "./babylonToThreeConvertor.css";
 
 
 export class BabylonToThreeConvertor {
@@ -138,9 +139,9 @@ export class BabylonToThreeConvertor {
      */
     getHtmlCanvas(canvasRef: any): JSX.Element {
         return (
-            <div>
-                <h3>Three.js scene converted from Babylon.js</h3>
-                <canvas title='' ref={canvasRef} />
+            <div className="c-BabylonToThreeConvertor" >
+                <div className="c-BabylonToThreeConvertor__Title"><h3>Three.js scene converted from Babylon.js</h3></div>
+                <div ><canvas title='' ref={canvasRef} /></div>
             </div>
         );
     }

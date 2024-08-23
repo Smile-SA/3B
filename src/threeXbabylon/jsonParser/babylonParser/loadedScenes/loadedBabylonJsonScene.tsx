@@ -4,9 +4,10 @@ import { BabylonJsonLoader } from "../loaders/babylonJsonLoader";
 import "./loadedBabylonJsonScene.css";
 
 const LoadedBabylonJsonScene = ({ jsonScene }) => {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    if (!canvasRef.current) return;
     const canvas = canvasRef.current;
     // @ts-ignore
     canvas.width = window.innerWidth * 0.4;
@@ -23,13 +24,21 @@ const LoadedBabylonJsonScene = ({ jsonScene }) => {
       engine.runRenderLoop(() => {
         scene.render();
       });
+      const handleResize = () => {
+        const width = window.innerWidth * 0.4;
+        const height = window.innerHeight * 0.5;
+        engine.resize();
+        canvas.width = width;
+        canvas.height = height;
+    };
 
+    window.addEventListener('resize', handleResize);
       return () => {
         scene.dispose();
         engine.dispose();
       };
     });
-  }, []);
+  },  [jsonScene]);
 
   return (
     <div className="LoadedBabylonJsonScene">

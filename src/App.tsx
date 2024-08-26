@@ -4,6 +4,7 @@ import BabylonSceneFromThree from "./threeXbabylon/transfomedScenes/babylonScene
 import ThreeSceneFromBabylon from "./threeXbabylon/transfomedScenes/threeSceneFromBabylon";
 import LoadedThreeJsonScene from "./threeXbabylon/jsonParser/threeParser/loadedScenes/loadedThreeJsonScene";
 import LoadedBabylonJsonScene from "./threeXbabylon/jsonParser/babylonParser/loadedScenes/loadedBabylonJsonScene";
+import LoadedSphereThreeJsonScene from "./threeXbabylon/jsonParser/threeParser/loadedScenes/loadedSphereThreeJsonScene";
 
 function App() {
   const threeJsonScene = "jsonScenes/threeJsonScene2.json";
@@ -38,7 +39,16 @@ function App() {
         </div>
         <ThreeSceneFromBabylon jsonScene={babylonJsonScene} />
       </div>
+      <div className="App__Sphere">
+        <LoadedSphereThreeJsonScene/>
+        <div className="App__Arrow-block">
+          <div className="App__Arrow-text">{transformToBabylonText}</div>
+          <div className="App__Arrow-triangle"></div>
+        </div>
+       
+      </div>
     </div>
+    
   );
 }
 export default App;

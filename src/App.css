@@ -83,3 +83,10 @@ h3 {
   border-left: 60px solid #cbe6f4;
   border-right: 0;
 }
+
+.App__Sphere {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

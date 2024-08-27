@@ -9,6 +9,8 @@ import LoadedSphereThreeJsonScene from "./threeXbabylon/jsonParser/threeParser/l
 function App() {
   const threeJsonScene = "jsonScenes/threeJsonScene2.json";
   const babylonJsonScene = "jsonScenes/babylonScene.json";
+  const threeJsonShpereScene = "jsonScenes/threeJsonSphereScene2.json";
+
 
   /*Static Data */
   const titlePage = "ThreeXBabylon - Playground"
@@ -40,11 +42,12 @@ function App() {
         <ThreeSceneFromBabylon jsonScene={babylonJsonScene} />
       </div>
       <div className="App__Sphere">
-        <LoadedSphereThreeJsonScene/>
+      <LoadedSphereThreeJsonScene/>
         <div className="App__Arrow-block">
           <div className="App__Arrow-text">{transformToBabylonText}</div>
           <div className="App__Arrow-triangle"></div>
         </div>
+        
        
       </div>
     </div>

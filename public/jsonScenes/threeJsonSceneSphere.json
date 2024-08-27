@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "version": 4.6,
+    "type": "Object",
+    "generator": "Object3D.toJSON"
+  },
+  "geometries": [
+    {
+      "uuid": "b1234567-d89e-4567-bba4-1234567890ab",
+      "type": "SphereGeometry",
+      "radius": 2,
+      "widthSegments": 32,
+      "heightSegments": 32
+    }
+  ],
+  "materials": [
+    {
+      "uuid": "c1234567-e89f-4c3c-b20d-0987654321ab",
+      "type": "MeshStandardMaterial",
+      "color": 16776960,
+      "metalness": 0.5,
+      "roughness": 0.5
+    }
+  ],
+  "object": {
+    "uuid": "d1234567-f89f-4a4c-bf08-1234567890cd",
+    "type": "Scene",
+    "layers": 1,
+    "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+    "up": [0, 1, 0],
+    "children": [
+      {
+        "uuid": "e1234567-67ac-4a8d-8b7e-1234567890de",
+        "type": "PerspectiveCamera",
+        "layers": 1,
+        "matrix": [
+          1, 0, 0, 0,
+          0, 1, 0, 0,
+          0, 0, 1, 0,
+          0, 0, 10, 1
+        ],
+        "up": [0, 1, 0],
+        "fov": 75,
+        "zoom": 1,
+        "near": 0.1,
+        "far": 1000,
+        "aspect": 1
+      },
+      {
+        "uuid": "f1234567-89bc-4a4e-9a8c-1234567890ef",
+        "type": "HemisphereLight",
+        "layers": 1,
+        "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1],
+        "up": [0, 1, 0],
+        "color": 16777215,
+        "intensity": 1,
+        "groundColor": 8421504
+      },
+      {
+        "uuid": "g1234567-90cd-4e8f-8a1b-1234567890gh",
+        "type": "Mesh",
+        "layers": 1,
+        "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+        "up": [0, 1, 0],
+        "geometry": "b1234567-d89e-4567-bba4-1234567890ab",
+        "material": "c1234567-e89f-4c3c-b20d-0987654321ab"
+      }
+    ]
+  }
+}

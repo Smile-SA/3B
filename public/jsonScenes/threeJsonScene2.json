@@ -18,7 +18,7 @@
     {
       "uuid": "BEECB3C7-322F-477B-93D2-FDB68456318F",
       "type": "MeshBasicMaterial",
-      "color": 16711680,
+      "color": 10485760,
       "reflectivity": 1,
       "refractionRatio": 0.98,
       "side": 2,
@@ -34,7 +34,7 @@
       "stencilFail": 7680,
       "stencilZFail": 7680,
       "stencilZPass": 7680,
-      "wireframe": true
+      "wireframe": false
     }
   ],
   "object": {

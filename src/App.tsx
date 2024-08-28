@@ -30,11 +30,12 @@ function App() {
           <div className="App__Arrow-text">{transformToBabylonText}</div>
           <div className="App__Arrow-triangle"></div>
         </div>
-        <LoadedBabylonJsonScene jsonScene={babylonJsonScene} />
+        <BabylonSceneFromThree jsonScene={threeJsonScene} />
+
       </div>
 
       <div className="App__ConvertedResult">
-        <BabylonSceneFromThree jsonScene={threeJsonScene} />
+      <LoadedBabylonJsonScene jsonScene={babylonJsonScene} />
         <div className="App__Arrow-block">
           <div className="App__Arrow-text">{transformToThreejsText}</div>
           <div className="App__Arrow-triangle"></div>

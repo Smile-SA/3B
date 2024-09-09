@@ -13,34 +13,41 @@ function App() {
 
 
   /*Static Data */
-  const titlePage = "ThreeXBabylon - Playground"
-  const subtitlePage = "Developed by SMILE R&D 🇫🇷"
-  const transformToBabylonText = "Transform to Babylon()"
-  const transformToThreejsText = "Transform to Threejs()"
+  const titlePage = "ThreeXBabylon - Playground";
+  const subtitlePage = "Developed by SMILE R&D 🇫🇷";
+  const transformToBabylonText = "Transform to Babylon()";
+  const transformToThreejsText = "Transform to Threejs()";
 
   return (
     <div className="App">
-      <div className="App__TitlesBlock" >
-      <h1>{titlePage}</h1>
-      <p>{subtitlePage}</p>
+      <div className="App__TitlesBlock">
+        <h1>{titlePage}</h1>
+        <p>{subtitlePage}</p>
       </div>
-      <div className="App__InitialResult">
-        <LoadedThreeJsonScene jsonScene={threeJsonScene} />
-        <div className="App__Arrow-block">
-          <div className="App__Arrow-text">{transformToBabylonText}</div>
-          <div className="App__Arrow-triangle"></div>
+
+      <div className="App__BoxGeometry">
+        <div className="App__canvas-wrapper">
+          <LoadedBabylonJsonScene jsonScene={babylonJsonScene} />
         </div>
-        <BabylonSceneFromThree jsonScene={threeJsonScene} />
-
-      </div>
-
-      <div className="App__ConvertedResult">
-      <LoadedBabylonJsonScene jsonScene={babylonJsonScene} />
         <div className="App__Arrow-block">
           <div className="App__Arrow-text">{transformToThreejsText}</div>
           <div className="App__Arrow-triangle"></div>
         </div>
-        <ThreeSceneFromBabylon jsonScene={babylonJsonScene} />
+        <div className="App__canvas-wrapper">
+          <ThreeSceneFromBabylon jsonScene={babylonJsonScene} />
+        </div>
+      </div>
+      <div className="App__PlaneGeometry">
+        <div className="App__canvas-wrapper">
+          <LoadedThreeJsonScene jsonScene={threeJsonScene} />
+        </div>
+        <div className="App__Arrow-block">
+          <div className="App__Arrow-text">{transformToBabylonText}</div>
+          <div className="App__Arrow-triangle"></div>
+        </div>
+        <div className="App__canvas-wrapper">
+          <BabylonSceneFromThree jsonScene={threeJsonScene} />
+        </div>
       </div>
       <div className="App__Sphere">
       <LoadedSphereThreeJsonScene/>

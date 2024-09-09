@@ -34,7 +34,7 @@
       "stencilFail": 7680,
       "stencilZFail": 7680,
       "stencilZPass": 7680,
-      "wireframe": false
+      "wireframe": true
     }
   ],
   "object": {

@@ -10,9 +10,9 @@ const LoadedBabylonJsonScene = ({ jsonScene }) => {
     if (!canvasRef.current) return;
     const canvas = canvasRef.current;
     // @ts-ignore
-    canvas.width = window.innerWidth * 0.4;
+    canvas.width = window.innerWidth * 0.3;
     // @ts-ignore
-    canvas.height = window.innerHeight * 0.5;
+    canvas.height = window.innerHeight * 0.3;
     let engine = new BABYLON.Engine(canvas, true);
     let scene = new BABYLON.Scene(engine);
 
@@ -25,8 +25,8 @@ const LoadedBabylonJsonScene = ({ jsonScene }) => {
         scene.render();
       });
       const handleResize = () => {
-        const width = window.innerWidth * 0.4;
-        const height = window.innerHeight * 0.5;
+        const width = window.innerWidth * 0.3;
+        const height = window.innerHeight * 0.3;
         engine.resize();
         canvas.width = width;
         canvas.height = height;

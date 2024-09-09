@@ -18,7 +18,7 @@ const ThreeSceneFromBabylon = ({jsonScene}) => {
 
             // @ts-ignore
             let renderer = new THREE.WebGLRenderer({ canvas: canvas });
-            renderer.setSize(window.innerWidth * 0.5, window.innerHeight * 0.5, true);
+            renderer.setSize(window.innerWidth * 0.3, window.innerHeight * 0.3, true);
 
             threeFromBabylonConvertor.transformAndRender(scene, engine, canvas, renderer);
 

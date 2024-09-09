@@ -16,7 +16,7 @@ const LoadedThreeJsonScene = ({ jsonScene }) => {
     renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current ?? undefined,
     });
-    renderer.setSize(window.innerWidth * 0.3, window.innerHeight * 0.5, true);
+    renderer.setSize(window.innerWidth * 0.3, window.innerHeight * 0.3, true);
 
     let threeLoader = new ThreeJsonLoader(jsonScene);
 
@@ -43,7 +43,7 @@ const LoadedThreeJsonScene = ({ jsonScene }) => {
 
       const handleResize = () => {
         const width = window.innerWidth * 0.3;
-        const height = window.innerHeight * 0.5;
+        const height = window.innerHeight * 0.3;
         renderer.setSize(width, height);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();

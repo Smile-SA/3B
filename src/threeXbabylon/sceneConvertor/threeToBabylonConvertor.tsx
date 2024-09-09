@@ -31,7 +31,7 @@ export class ThreeToBabylonConvertor {
   transformToBabylon(canvas: any, canvasWidth: number, canvasHeight: number) {
     this.canvas = canvas;
     this.canvas.width = window.innerWidth * canvasWidth;
-    this.canvas.height = window.innerWidth * canvasHeight;
+    this.canvas.height = window.innerHeight * canvasHeight;
 
     this.engine = new BABYLON.Engine(this.canvas, true);
     this.scene = new BABYLON.Scene(this.engine);

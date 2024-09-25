@@ -4,12 +4,12 @@ import BabylonSceneFromThree from "./threeXbabylon/transfomedScenes/babylonScene
 import ThreeSceneFromBabylon from "./threeXbabylon/transfomedScenes/threeSceneFromBabylon";
 import LoadedThreeJsonScene from "./threeXbabylon/jsonParser/threeParser/loadedScenes/loadedThreeJsonScene";
 import LoadedBabylonJsonScene from "./threeXbabylon/jsonParser/babylonParser/loadedScenes/loadedBabylonJsonScene";
-import LoadedSphereThreeJsonScene from "./threeXbabylon/jsonParser/threeParser/loadedScenes/loadedSphereThreeJsonScene";
+//import LoadedSphereThreeJsonScene from "./threeXbabylon/jsonParser/threeParser/loadedScenes/loadedSphereThreeJsonScene";
 
 function App() {
   const threeJsonScene = "jsonScenes/threeJsonScene2.json";
   const babylonJsonScene = "jsonScenes/babylonScene.json";
-  const threeJsonShpereScene = "jsonScenes/threeJsonSphereScene2.json";
+  //const threeJsonShpereScene = "jsonScenes/threeJsonSphereScene2.json";
 
 
   /*Static Data */
@@ -49,7 +49,7 @@ function App() {
           <BabylonSceneFromThree jsonScene={threeJsonScene} />
         </div>
       </div>
-      <div className="App__Sphere">
+      {/* <div className="App__Sphere">
       <LoadedSphereThreeJsonScene/>
         <div className="App__Arrow-block">
           <div className="App__Arrow-text">{transformToBabylonText}</div>
@@ -57,7 +57,7 @@ function App() {
         </div>
         
        
-      </div>
+      </div> */}
     </div>
     
   );

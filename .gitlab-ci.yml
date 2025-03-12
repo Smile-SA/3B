@@ -1,0 +1,31 @@
+stages:
+  - deploy
+  
+default:
+  image: node:22.12-alpine
+
+gh-pages:
+  stage: deploy
+  before_script:
+    - apk update
+    - apk add bash
+    - apk add git
+    - corepack enable
+    - corepack prepare yarn@4 --activate
+    - yarn --version
+  script:
+    - yarn
+    - SLINT_NO_DEV_ERRORS=true DISABLE_ESLINT_PLUGIN=true yarn build
+    - rm -rf public
+    - cp build/index.html build/404.html
+    - git config --global --add safe.directory '*'
+    - git remote set-url origin "https://${GITLAB_USER_NAME}:${GITLAB_GHPAGES_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - yarn
+    - yarn deploy
+  artifacts:
+    paths:
+      - "build/"
+  allow_failure: false
+  when: manual

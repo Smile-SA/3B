@@ -1,0 +1,21 @@
+.LoadedBabylonJsonScene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .LoadedBabylonJsonScene__Title {
+    position: absolute;
+    top: 5%;
+    background-color: white;
+    border-radius: 5px;
+    transform: translate(-20%, -20%) rotate(-35deg);
+    padding: 0 20px;
+    border-color: black;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+  }
+  .babylonCanvas {
+    width: 100%;
+    height: 600px; /* Ajustez selon vos besoins */
+    border: 1px solid #ccc;
+  }

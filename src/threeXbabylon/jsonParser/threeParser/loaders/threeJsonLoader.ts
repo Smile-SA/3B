@@ -25,7 +25,7 @@ export class ThreeJsonLoader {
               this.scene.children.push(child);
             }
           });
-          resolve(loadedScene);
+          resolve(this.scene);
         },
         undefined,
         reject

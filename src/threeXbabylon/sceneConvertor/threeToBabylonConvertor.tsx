@@ -1,7 +1,6 @@
 import * as BABYLON from "babylonjs";
 import { Scene } from "three";
 import { ThreeToBabylon } from "../adapter/threeToBabylon";
-import { ThreeJsonLoader } from "../jsonParser/threeParser/loaders/threeJsonLoader";
 import { ThreeComponentBuilder } from "../dictionary/builder/threeComponentBuilder";
 import { ConvertToBabylon } from "../adapter/implementation/convetToBabylon";
 import React from "react";
@@ -10,15 +9,15 @@ import "./threeToBabylonConvertor.css";
 export class ThreeToBabylonConvertor {
   canvas: any;
   threeToBabylon: ThreeToBabylon;
-  threeLoader: ThreeJsonLoader;
   threeComonentBuilder: ThreeComponentBuilder;
   engine!: BABYLON.Engine;
   scene!: BABYLON.Scene;
   threeScene: Scene = new Scene();
+  loadedScene: any;
 
-  constructor(threeJsonPath: string) {
+  constructor(loadedScene: any) {
     this.threeToBabylon = new ConvertToBabylon();
-    this.threeLoader = new ThreeJsonLoader(threeJsonPath);
+    this.loadedScene = loadedScene;
     this.threeComonentBuilder = new ThreeComponentBuilder();
   }
 
@@ -28,27 +27,34 @@ export class ThreeToBabylonConvertor {
    * @param canvasWidth
    * @param canvasHeight
    */
-  transformToBabylon(canvas: any, canvasWidth: number, canvasHeight: number) {
-    this.canvas = canvas;
-    this.canvas.width = window.innerWidth * canvasWidth;
-    this.canvas.height = window.innerHeight * canvasHeight;
-
-    this.engine = new BABYLON.Engine(this.canvas, true);
-    this.scene = new BABYLON.Scene(this.engine);
-
-    this.threeLoader.loadSceneFromJson().then(() => {
+  transformToBabylon(canvas: any, canvasWidth: number, canvasHeight: number, defaultConf: any) {
+      this.canvas = canvas;
+      this.canvas.width = canvasWidth;
+      this.canvas.height = canvasHeight;
+      this.engine = new BABYLON.Engine(this.canvas, true);
+      this.scene = new BABYLON.Scene(this.engine);
+      this.scene.clearColor = BABYLON.Color4.FromHexString(defaultConf.sceneBgColor);
       this.convertThreeSceneChildren();
-      this.setupRendering();
-    });
+  
+      const handleResize = () => {
+        this.engine.resize();
+      };
+
+      window.addEventListener('resize', handleResize);
+      // Render the scene
+      this.engine.runRenderLoop(() => {
+        this.scene.render();
+      });
   }
 
   /**
    ** Converts Three.js scene children to Babylon.js scene children
    */
   convertThreeSceneChildren() {
-    this.threeScene = this.threeLoader.scene;
+    // this.threeScene = this.threeLoader.scene;
+    this.threeScene = this.loadedScene;
     this.threeScene.children.forEach((child) => {
-      let childComponent = this.threeComonentBuilder.builChild(child);
+      let childComponent = this.threeComonentBuilder.buildChild(child);
       this.threeToBabylon.convertComponent(
         childComponent,
         this.scene,
@@ -58,22 +64,11 @@ export class ThreeToBabylonConvertor {
   }
 
   /**
-   ** Sets up rendering
-   */
-  setupRendering() {
-    this.engine.runRenderLoop(() => this.scene.render());
-    return () => {
-      this.scene.dispose();
-      this.engine.dispose();
-    };
-  }
-
-  /**
    ** Gets the html canvas
    * @param canvasRef
    * @returns
    */
-  getHtmlCanvas(canvasRef: any): JSX.Element {
+  getHtmlCanvas(canvasRef: any): React.JSX.Element {
     return (
       <div className="ThreeToBabylonConvertor">
         <div className="ThreeToBabylonConvertor__Title">

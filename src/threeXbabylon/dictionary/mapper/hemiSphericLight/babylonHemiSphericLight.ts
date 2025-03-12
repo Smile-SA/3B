@@ -15,8 +15,11 @@ export class BabylonHemiSphericLight {
     constructor(threeLight: HemisphereLight, scene: BABYLON.Scene, x?: number, y?: number, z?: number) {
         BabylonHemiSphericLight._lightNumber++;
         this.name = this.name + BabylonHemiSphericLight._lightNumber;
-        this.light = new BABYLON.HemisphericLight(this.name, new BABYLON.Vector3(this.x, this.y, this.z), scene);
+        this.y = this.y ? -this.y : 0;
+        this.light = new BABYLON.HemisphericLight(this.name, new BABYLON.Vector3(this.y, this.x, this.z), scene);
         this.light.diffuse = this.convertColor(threeLight.color);
+        this.light.groundColor = new BABYLON.Color3(threeLight.groundColor.r, threeLight.groundColor.g, threeLight.groundColor.b);
+        this.light.specular = new BABYLON.Color3(0.05, 0.05, 0.05);
     }   
 
     /**

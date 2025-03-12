@@ -9,7 +9,7 @@ export class ThreeHemiSphericLight {
     scene: THREE.Scene,
     skyColor: THREE.ColorRepresentation = 0xffffff,
     groundColor: THREE.ColorRepresentation = 0xffffff,
-    intensity: number = 1
+    intensity: number = 100
   ) {
     this.light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
     this.setLightPosition(babylonLight);

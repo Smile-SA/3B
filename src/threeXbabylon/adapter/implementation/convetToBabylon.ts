@@ -88,7 +88,7 @@ export class ConvertToBabylon implements ThreeToBabylon {
       case "PerspectiveCamera":
         return this.convertAttachedCamera(component, scene, canvas);
       case "HemisphereLight":
-        return this.convertHemiSphereLight(component, scene);
+        return this.convertHemiSphereLight(component, scene, component.position.x, component.position.y, component.position.z);
       case "Mesh":
         return this.convertMesh(component, scene);
       default:

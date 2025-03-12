@@ -1,16 +1,21 @@
 {
   "name": "threexbabylon",
   "version": "0.1.0",
+  "homepage": "https://Smile-SA.github.io/3B",
   "private": true,
   "dependencies": {
-    "@babylonjs/serializers": "^6.46.0",
+    "@babylonjs/core": "^6.49.0",
+    "@babylonjs/loaders": "^6.49.0",
+    "@babylonjs/serializers": "^6.49.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/three": "^0.162.0",
-    "babylonjs": "^6.46.0",
-    "babylonjs-serializers": "^6.46.0",
-    "react": "^18.3.1",
+    "babylonjs": "^6.49.0",
+    "babylonjs-loaders": "^6.49.0",
+    "babylonjs-serializers": "^6.49.0",
+    "cross-env": "^7.0.3",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "three": "^0.162.0",
@@ -19,15 +24,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env PUBLIC_URL=./ react-scripts start",
+    "build": "cross-env PUBLIC_URL=./ react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -49,6 +54,7 @@
   },
   "packageManager": "yarn@4.4.0",
   "devDependencies": {
-    "@types/react": "^18"
+    "eslint-config-react": "^1.1.7",
+    "gh-pages": "^6.3.0"
   }
 }

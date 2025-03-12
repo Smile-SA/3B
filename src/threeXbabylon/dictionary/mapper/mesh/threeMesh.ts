@@ -48,9 +48,35 @@ export class ThreeBox {
    * @param babylonMesh 
    * @returns 
    */  
-  convertColorToThreeColor(babylonMesh: Mesh): THREE.Color {
-    // TODO: Implement the conversion logic
-    return new THREE.Color(0xffffff);
+  convertColorToThreeColor(babylonMesh: Mesh): THREE.Color | null {
+    if (!babylonMesh.material) {
+      return new THREE.Color("#FFFFFF");
+    }
+    
+    if (babylonMesh.edgesColor && babylonMesh.edgesWidth > 0) {
+      return new THREE.Color(
+        babylonMesh.edgesColor.r,
+        babylonMesh.edgesColor.g,
+        babylonMesh.edgesColor.b
+      );
+    }
+
+    if (babylonMesh.renderOutline && babylonMesh.outlineColor) {
+      return new THREE.Color(
+        babylonMesh.outlineColor.r,
+        babylonMesh.outlineColor.g,
+        babylonMesh.outlineColor.b
+      );
+    }
+    
+    if (babylonMesh.renderOverlay && babylonMesh.overlayColor) {
+      return new THREE.Color(
+        babylonMesh.overlayColor.r,
+        babylonMesh.overlayColor.g,
+        babylonMesh.overlayColor.b
+      );
+    }
+    return null;
   }
 
   /**

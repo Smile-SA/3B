@@ -28,20 +28,19 @@ export class BabylonToThreeConvertor {
      * @param canvas 
      * @param renderer 
      */
-    transformToThree(
-        sceneToConvert: THREE.Scene, 
-        engine: Engine, 
-        canvas: any, renderer: THREE.WebGLRenderer){
-
-        this.babylonJsonLoader.loadSceneFromJson(engine, canvas)
-        .then((loadedBabyonScene) => {
-                this.convertBabylonNodes(loadedBabyonScene, sceneToConvert, renderer);
-                localStorage.setItem(BabylonToThreeConvertor.lsItem, JSON.stringify(sceneToConvert));
-
-        })
-        .catch((e) => {
-            console.error(e.message);
-        });
+    async transformToThree(
+        sceneToConvert: THREE.Scene,
+        engine: Engine,
+        canvas: any,
+        renderer: THREE.WebGLRenderer
+    ) {
+        try {
+            const loadedBabyonScene = await this.babylonJsonLoader.loadSceneFromJson(engine, canvas);
+            this.convertBabylonNodes(loadedBabyonScene, sceneToConvert, renderer);
+            localStorage.setItem(BabylonToThreeConvertor.lsItem, JSON.stringify(sceneToConvert));
+        } catch (error) {
+            console.error((error as any).message);
+        }
     }
 
     /**
@@ -78,7 +77,6 @@ export class BabylonToThreeConvertor {
      * @returns 
      */
     setupRendering(renderer: THREE.WebGLRenderer, sceneData: string) {    
-            console.log("Building scene from local storage")
             let importedScene = new THREE.Scene();
             // Deserialize the scene data
             let  loader = new THREE.ObjectLoader();
@@ -98,7 +96,7 @@ export class BabylonToThreeConvertor {
             animate();
         
             const handleResize = () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.aspect = renderer.domElement.width / renderer.domElement.height;
                 camera.updateProjectionMatrix();
             };
 
@@ -122,10 +120,11 @@ export class BabylonToThreeConvertor {
      * @param canvas 
      * @param renderer 
      */
-    transformAndRender(sceneToConvert: THREE.Scene, engine: Engine, canvas: any, renderer: THREE.WebGLRenderer) {
+    async transformAndRender(sceneToConvert: THREE.Scene, engine: Engine, canvas: any, renderer: THREE.WebGLRenderer) {
         let sceneData = JSON.parse(localStorage.getItem(BabylonToThreeConvertor.lsItem) as any)
         if(!sceneData){
-            this.transformToThree(sceneToConvert, engine, canvas, renderer);
+            await this.transformToThree(sceneToConvert, engine, canvas, renderer);
+            sceneData = JSON.parse(localStorage.getItem(BabylonToThreeConvertor.lsItem) as any);
             this.setupRendering(renderer, sceneData);
         }else {
             this.setupRendering(renderer, sceneData);
@@ -138,10 +137,10 @@ export class BabylonToThreeConvertor {
      * @param canvasRef 
      * @returns 
      */
-    getHtmlCanvas(canvasRef: any): JSX.Element {
+    getHtmlCanvas(canvasRef: any, containerRef: any): React.JSX.Element {
         return (
-            <div className="BabylonToThreeConvertor" >
-                <div className="BabylonToThreeConvertor__Title"><h3>Three.js</h3></div>
+            <div className="BabylonToThreeConvertor" ref={containerRef}>
+                <div className="BabylonToThreeConvertor__Title"><h3>Three.js Scene</h3></div>
                 <canvas title='' ref={canvasRef} />
             </div>
         );

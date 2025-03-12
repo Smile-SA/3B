@@ -1,6 +1,8 @@
 import { PerspectiveCamera } from 'three';
 import { Scene, ArcRotateCamera, Vector3 } from 'babylonjs';
+import { configuration } from '../../../../defaultConf.js';
 
+const defaultConfig = configuration();
 export class BabylonArcRotateCamera {
 
     // babylon properties
@@ -11,16 +13,13 @@ export class BabylonArcRotateCamera {
     radius!: number;
     babylonCamera: ArcRotateCamera;
 
-
     constructor(camera: PerspectiveCamera, scene: Scene, canvas: any, 
         noPreventDafault: boolean = true, target: Vector3 = Vector3.Zero()) {
         BabylonArcRotateCamera._cameraNumber++;
         this.name += BabylonArcRotateCamera._cameraNumber;
-        this.convertPerspectiveToArcRotateParams(camera.fov, camera.aspect, camera.near, camera.far);
-        this.babylonCamera = new ArcRotateCamera(this.name, this.alpha, this.beta, this.radius, target, scene);
-        if(camera.position !== undefined){
-            this.babylonCamera.setPosition(this.getCameraPosition(camera));
-        }
+        
+        this.babylonCamera = new ArcRotateCamera("arcCamera", defaultConfig.cameraPosition[0], defaultConfig.cameraPosition[1], defaultConfig.cameraPosition[2], new Vector3(defaultConfig.cameraLookAt[0], defaultConfig.cameraLookAt[1], defaultConfig.cameraLookAt[2]), scene);
+        this.babylonCamera.wheelPrecision = defaultConfig.babylonWheelPrecision;
         this.babylonCamera.attachControl(canvas, noPreventDafault)
     }
 

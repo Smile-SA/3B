@@ -9,8 +9,8 @@
       "uuid": "b1234567-d89e-4567-bba4-1234567890ab",
       "type": "SphereGeometry",
       "radius": 2,
-      "widthSegments": 32,
-      "heightSegments": 32
+      "widthSegments": 64,
+      "heightSegments": 64
     }
   ],
   "materials": [

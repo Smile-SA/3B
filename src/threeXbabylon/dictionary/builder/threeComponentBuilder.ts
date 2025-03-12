@@ -16,7 +16,7 @@ export class ThreeComponentBuilder {
      * @param child 
      * @returns 
      */
-    builChild(child: Object3D): any {
+    buildChild(child: Object3D): any {
         let component : Object3D;
         if(this.threeDict.contains(child.type)){
             component = child;
